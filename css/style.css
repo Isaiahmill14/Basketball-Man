@@ -1,5 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Anta&display=swap');
+
+ * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Anta', sans-serif;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vmin;
+    background-color: burlywood;
+}
+
+.container {
+    height: 50vmin;
+    width: 100vmin;
+    background-color: white;
+    display: flex;
+    gap: 10vmin;
+    align-items: flex-end;
+    padding: 60px 40px;
+    border-radius: 25px;
+} 
+
 .basketballman-box > img {
     height: 20vmin;
     margin-left: 9vmin;
     padding-bottom: 7vmin; 
 }
+
+.basketballman-box > h1 {
+    font-size: 1.7rem;
+    padding-bottom: 2vmin;
+    text-transform: uppercase;
+}
+
+.word-display {
+    display: flex;
+    gap: 12px;
+    list-style: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.word-display > .letter {
+    width: 28px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 5vmin;
+    border-bottom: 3px solid black;
+}
+
+.word-display > .letter.guessed {
+    /* if i want to remove the line under the guessed letter uncomment line below */
+    /* border-color: transparent;  */
+    margin: -40px 0 23px;
+}
+
+.result-text {
+    display: flex;
+    margin-bottom: 7vmin;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+}
+
+.guesses-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 4vmin;
+}
+
+.guesses-text > b {
+    color: orangered;
+}
+
+.keyboard-selector {
+    display: flex;
+    gap: 4px;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.keyboard-selector > button {
+    width: calc(100% / 9 - 5px);
+}
+
+/* .play-again {
+
+}  */
