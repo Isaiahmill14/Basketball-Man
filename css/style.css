@@ -17,7 +17,7 @@ body {
 
 .container {
     height: 50vmin;
-    width: 100vmin;
+    width: 125vmin;
     background-color: white;
     display: flex;
     gap: 10vmin;
@@ -27,8 +27,8 @@ body {
 } 
 
 .basketballman-box > img {
-    height: 20vmin;
-    margin-left: 9vmin;
+    height: 25vmin;
+    margin-left: 7vmin;
     padding-bottom: 7vmin; 
 }
 
@@ -44,6 +44,7 @@ body {
     list-style: none;
     align-items: center;
     justify-content: center;
+    padding-bottom: 2vmin;
 }
 
 .word-display > .letter {
@@ -57,24 +58,16 @@ body {
 }
 
 .word-display > .letter.guessed {
-    /* if i want to remove the line under the guessed letter uncomment line below */
-    /* border-color: transparent;  */
-    margin: -40px 0 23px;
-}
-
-.result-text {
-    display: flex;
-    margin-bottom: 7vmin;
-    align-items: center;
-    justify-content: center;
-    font-size: 3rem;
+    /* if i want to add/remove the line under the guessed letter uncomment line below */
+    border-color: transparent; 
+    margin: -40px 0 20px;
 }
 
 .guesses-text {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 4vmin;
+    margin-bottom: 6vmin;
 }
 
 .guesses-text > b {
@@ -85,14 +78,94 @@ body {
     display: flex;
     gap: 4px;
     flex-wrap: wrap;
-    align-items: center;
     justify-content: center;
 }
 
+
+
 .keyboard-selector > button {
+    color: white;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    outline: none;
+    padding: 4px;
+    border: none;
+    background-color: burlywood;
+    border-radius: 6px;
+    text-transform: uppercase;
     width: calc(100% / 9 - 5px);
 }
 
-/* .play-again {
+.keyboard-selector > button:hover {
+    background-color: bisque;
+}
 
-}  */
+.game-menu {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+/* display - flex to show game menu */
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0,0,0,0.6);
+}
+
+.game-menu > .menu {
+    background-color: white;
+    max-width: 420px;
+    width: 20%;
+    text-align: center;
+    border-radius: 10px;
+    padding: 25px;
+}
+
+.menu > h4 {
+    font-size: 1.5rem;
+    padding: 1vmin;
+}
+
+.menu > p {
+    font-size: 1.15rem;
+    padding: 1.8vmin;
+}
+
+.menu > p > b {
+    color: burlywood;
+}
+
+.menu > .play-again {
+    border-radius: 5px;
+    padding: 8px 15px;
+    margin-top: 1vmin;
+    color: white;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    background-color: burlywood;
+    border-radius: 6px;
+    text-transform: uppercase;
+}
+
+.play-again:hover {
+    background-color: bisque;
+}
+
+@media (max-width: 782px) {
+    .container {
+        flex-direction: column;
+        padding: 30px 15px;
+        align-items: center;
+    }
+    .basketballman-box > img {
+        max-width: 200px;
+    }
+    .basketballman-box > h1 {
+        display: none;
+    }
+}
