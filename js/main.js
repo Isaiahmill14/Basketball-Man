@@ -4,21 +4,20 @@ const wordChoices = [
     'guard', 'press', 'point', 'backcourt', 'player', 'center', 'shooter', 
     'hoop', 'net',
 ]
-const maxGuesses = 8
+const maxGuesses = 10
 
 /*----- state variables -----*/
 let winner // guessed correctly/incorrectly
-let wrongGuesses = 0  // base value beginning at 0
-
+let wrongGuesses = 0  // base value of guesses beginning at 0
 
 /*----- cached elements  -----*/
 const keyboardEl = document.querySelector('.keyboard-selector')
 const playAgainBtn = document.querySelector('.play-again')
+const basketballManImageEl = document.querySelector('.basketballman-box img')
 const wordDisplayEl = document.querySelector('.word-display')
 const guessesEl = document.querySelector('.guesses-text b')
 const randomWordEl = wordChoices[Math.floor(Math.random() * wordChoices.length)]
 console.log(keyboardEl)
-console.log(guessesEl)
 
 /*----- event listeners -----*/
 playAgainBtn.addEventListener('click', init)
@@ -28,11 +27,6 @@ init()
 
 function init() {
     render()
-}
-
-function renderRandomWord() {
-    wordDisplayEl.innerHTML = randomWordEl.split('').map(() => '<li class="letter"></li>').join('')
-    console.log(randomWordEl)
 }
 
 function initGame(button, clickedLetter) {
@@ -47,11 +41,24 @@ function initGame(button, clickedLetter) {
         })
         console.log(clickedLetter, 'does exist in the word')
     } else {
+        // update wrongGuesses when something is guessed incorrectly, dimenish img opacity .1 per wrong guess
         wrongGuesses++
+        // basketballManImageEl.style.opacity -= .1
         console.log(clickedLetter, 'does not exist in the word')
     }
+
+    button.disabled = true
     guessesEl.innerText = `${wrongGuesses} / ${maxGuesses}`
-    console.log()
+}
+
+function render() {
+    renderRandomWord()
+    renderKeyboard()
+}
+
+function renderRandomWord() {
+    wordDisplayEl.innerHTML = randomWordEl.split('').map(() => '<li class="letter"></li>').join('')
+    console.log(randomWordEl)
 }
 
 function renderKeyboard() {
@@ -63,10 +70,6 @@ function renderKeyboard() {
     }
 }
 
-function render() {
-    renderRandomWord()
-    renderKeyboard()
-}
 
 
 /*----- unknown filing -----*/
