@@ -30,7 +30,6 @@ body {
     height: 25vmin;
     margin-left: 7vmin;
     padding-bottom: 7vmin; 
-    opacity: 1;
 }
 
 .basketballman-box > h1 {
@@ -96,7 +95,7 @@ body {
     width: calc(100% / 9 - 5px);
 }
 
-.keyboard-selector >button[disabled] {
+.keyboard-selector > button[disabled] {
     opacity: .5;
     pointer-events: none;
 }
@@ -111,11 +110,19 @@ body {
     top: 0;
     width: 100%;
     height: 100%;
-/* display - flex to show game menu */
-    display: none;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 999;
+    display: flex;
     align-items: center;
     justify-content: center;
     background-color: rgba(0,0,0,0.6);
+    transition: opacity .4s ease;
+}
+
+.game-menu > .show {
+    opacity: 1;
+    pointer-events: auto;
 }
 
 .game-menu > .menu {
