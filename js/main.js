@@ -21,6 +21,7 @@ const gameMenu = document.querySelector('.game-menu')
 const playAgainBtn = document.querySelector('.play-again')
 
 /*----- event listeners -----*/
+// playAgainBtn.addEventListener('click', renderRandomWord)
 
 /*----- initial game state -----*/
 basketballManImageEl.style.opacity = 1
@@ -62,33 +63,21 @@ function initGame(button, clickedLetter) {
         basketballManImageEl.style.opacity = parseFloat(basketballManImageEl.style.opacity) - .1
         console.log(clickedLetter, 'does not exist in the word')
     }
-    
     button.disabled = true
     guessesEl.innerText = `${wrongGuesses} / ${maxGuesses}`
-    
     // ends game if either of the conditions are met
     if(wrongGuesses === maxGuesses) return gameOver(false)
     if(correctLetters.length === randomWordEl.length) return gameOver(true)
 }
-
 
 function render() {
     renderRandomWord()
     renderKeyboard()
 }
 
-function resetGame() {
-    //resetting game and all variables
-    correctLetters = []
-    wrongGuesses = 0
-    guessesEl.innerText = `${wrongGuesses} / ${maxGuesses}`
-    wordDisplayEl.querySelectorAll('button').forEach((btn) => btn.disabled = false)
-    wordDisplayEl.innerHTML = randomWordEl.split('').map(() => '<li class="letter"></li>').join('')
-    gameMenu.classList.remove('show')
-    
-}
 
 function renderRandomWord() {
+    currentWord = randomWordEl
     console.log(randomWordEl)
     resetGame()
 }
@@ -102,8 +91,15 @@ function renderKeyboard() {
     }
 }
 
+function resetGame() {
+    //resetting game and all variables
+    correctLetters = []
+    wrongGuesses = 0
+    guessesEl.innerText = `${wrongGuesses} / ${maxGuesses}`
+    keyboardEl.querySelectorAll('button').forEach((btn) => btn.disabled = false)
+    wordDisplayEl.innerHTML = randomWordEl.split('').map(() => '<li class="letter"></li>').join('')
+    gameMenu.classList.remove('show')
+    // randomWordEl()
+}
+
 playAgainBtn.addEventListener('click', renderRandomWord)
-
-
-/*----- unknown filing -----*/
-

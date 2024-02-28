@@ -9,6 +9,7 @@
 
 body {
     display: flex;
+    padding: 0 10px;
     align-items: center;
     justify-content: center;
     min-height: 100vmin;
@@ -24,18 +25,23 @@ body {
     align-items: flex-end;
     padding: 60px 40px;
     border-radius: 25px;
+    align-items: flex-end;
+    justify-content: space-between;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 } 
 
 .basketballman-box > img {
     height: 25vmin;
     margin-left: 7vmin;
     padding-bottom: 7vmin; 
+    max-width: 270px;
 }
 
 .basketballman-box > h1 {
     font-size: 1.7rem;
     padding-bottom: 2vmin;
     text-transform: uppercase;
+    text-align: center;
 }
 
 .word-display {
@@ -45,6 +51,7 @@ body {
     align-items: center;
     justify-content: center;
     padding-bottom: 2vmin;
+    flex-wrap: wrap;
 }
 
 .word-display > .letter {
@@ -112,17 +119,19 @@ body {
     height: 100%;
     opacity: 0;
     pointer-events: none;
-    z-index: 999;
+    z-index: 9999;
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: rgba(0,0,0,0.6);
     transition: opacity .4s ease;
+    padding: 0 10px;
 }
 
-.game-menu > .show {
+.show {
     opacity: 1;
     pointer-events: auto;
+    transition: opacity .4s .4s ease;
 }
 
 .game-menu > .menu {
@@ -178,5 +187,12 @@ body {
     }
     .basketballman-box > h1 {
         display: none;
+    }
+    .game-box > h4 {
+        font-size: 1rem;
+    }
+    .word-display > .letter {
+        margin-bottom: 35px;
+        font-size: 1.7rem;
     }
 }
