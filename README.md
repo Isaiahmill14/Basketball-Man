@@ -17,7 +17,7 @@ Guess the basketball themed word before the ball disappears!
 
 # Getting Started
 
-[Click to Play Basketball Man!](<link href='https://isaiahmill14.github.io/Basketball-Man/'>)
+[Click to Play Basketball Man!](https://isaiahmill14.github.io/Basketball-Man/)
 
 # Next Steps
 
