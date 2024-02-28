@@ -31,9 +31,11 @@ body {
 } 
 
 .basketballman-box > img {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin-bottom: 4vmin;
     height: 25vmin;
-    margin-left: 8vmin;
-    padding-bottom: 7vmin; 
     max-width: 270px;
 }
 
@@ -177,14 +179,16 @@ body {
 
 /* working on media query */
 
-/* @media (max-width: 782px) {
+@media (max-width: 782px) {
     .container {
         flex-direction: column;
         padding: 30px 15px;
         align-items: center;
+        height: 65vmin;
     }
     .basketballman-box > img {
         max-width: 200px;
+        max-height: 100px;
     }
     .basketballman-box > h1 {
         display: none;
@@ -193,7 +197,7 @@ body {
         font-size: 1rem;
     }
     .word-display > .letter {
-        margin-bottom: 35px;
+        margin-bottom: 15px;
         font-size: 1.7rem;
     }
-} */
+}

@@ -2,7 +2,7 @@
 const wordChoices = [
     'basketball', 'score', 'coach', 'halfcourt', 'court', 'block', 
     'guard', 'point', 'backcourt', 'player', 'center', 'shooter', 
-    'hoop', 'net', 'steal', 
+    'hoop', 'net', 'steal', 'dunk', ''
 ]
 const maxGuesses = 10
 
@@ -39,7 +39,7 @@ function gameOver(isVictory) {
         gameMenu.querySelector('h4').innerText = `${isVictory ? 'You Win!' : 'Game Over'}`
         gameMenu.querySelector('p').innerHTML = `${gameMenuText} <b>${randomWordEl}</b>`
         gameMenu.classList.add('show')
-    }, 300)
+    }, 150)
 }
 
 function initGame(button, clickedLetter) {
