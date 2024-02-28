@@ -7,7 +7,6 @@ const wordChoices = [
 const maxGuesses = 10
 
 /*----- state variables -----*/
-let winner // guessed correctly/incorrectly
 let wrongGuesses // container for wrong guesses
 let correctLetters  //container for correct guesses
 
@@ -16,12 +15,11 @@ const keyboardEl = document.querySelector('.keyboard-selector')
 const basketballManImageEl = document.querySelector('.basketballman-box img')
 const wordDisplayEl = document.querySelector('.word-display')
 const guessesEl = document.querySelector('.guesses-text b')
-const randomWordEl = wordChoices[Math.floor(Math.random() * wordChoices.length)]
 const gameMenu = document.querySelector('.game-menu')
 const playAgainBtn = document.querySelector('.play-again')
 
 /*----- event listeners -----*/
-// playAgainBtn.addEventListener('click', renderRandomWord)
+playAgainBtn.addEventListener('click', renderRandomWord)
 
 /*----- initial game state -----*/
 basketballManImageEl.style.opacity = 1
@@ -55,13 +53,11 @@ function initGame(button, clickedLetter) {
                 wordDisplayEl.querySelectorAll('li')[idx].classList.add('guessed')
             }
         })
-        console.log(clickedLetter, 'does exist in the word')
     } else {
         // update wrongGuesses when something is guessed incorrectly, dimenish img opacity .1 per wrong guess
         wrongGuesses++
         console.log(parseFloat(basketballManImageEl.style.opacity))
         basketballManImageEl.style.opacity = parseFloat(basketballManImageEl.style.opacity) - .1
-        console.log(clickedLetter, 'does not exist in the word')
     }
     button.disabled = true
     guessesEl.innerText = `${wrongGuesses} / ${maxGuesses}`
@@ -75,13 +71,6 @@ function render() {
     renderKeyboard()
 }
 
-
-function renderRandomWord() {
-    currentWord = randomWordEl
-    console.log(randomWordEl)
-    resetGame()
-}
-
 function renderKeyboard() {
     for (let i = 97; i <= 122; i++) {
         const button = document.createElement('button')
@@ -89,6 +78,12 @@ function renderKeyboard() {
         keyboardEl.appendChild(button)
         button.addEventListener('click', evt => initGame(evt.target, String.fromCharCode(i)))
     }
+}
+
+function renderRandomWord() {
+    randomWordEl = wordChoices[Math.floor(Math.random() * wordChoices.length)]
+    console.log(randomWordEl)
+    resetGame()
 }
 
 function resetGame() {
@@ -99,7 +94,4 @@ function resetGame() {
     keyboardEl.querySelectorAll('button').forEach((btn) => btn.disabled = false)
     wordDisplayEl.innerHTML = randomWordEl.split('').map(() => '<li class="letter"></li>').join('')
     gameMenu.classList.remove('show')
-    // randomWordEl()
 }
-
-playAgainBtn.addEventListener('click', renderRandomWord)

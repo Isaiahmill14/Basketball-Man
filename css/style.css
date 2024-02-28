@@ -175,8 +175,9 @@ body {
 .play-again:hover {
     background-color: bisque;
 }
+/* working on media query */
 
-@media (max-width: 782px) {
+/* @media (max-width: 782px) {
     .container {
         flex-direction: column;
         padding: 30px 15px;
@@ -195,4 +196,4 @@ body {
         margin-bottom: 35px;
         font-size: 1.7rem;
     }
-}
+} */
