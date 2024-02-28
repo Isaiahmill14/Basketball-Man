@@ -17,8 +17,7 @@ Guess the basketball themed word before the ball disappears!
 
 # Getting Started
 
-[Click to View Project Planning](your Trello url here)
-[Click to Play Connect Four!](your deployment url here)
+[Click to Play Basketball Man!](<link href='https://isaiahmill14.github.io/Basketball-Man/'>)
 
 # Next Steps
 
