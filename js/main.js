@@ -1,8 +1,8 @@
   /*----- constants -----*/
 const wordChoices = [
     'basketball', 'score', 'coach', 'halfcourt', 'court', 'block', 
-    'guard', 'press', 'point', 'backcourt', 'player', 'center', 'shooter', 
-    'hoop', 'net',
+    'guard', 'point', 'backcourt', 'player', 'center', 'shooter', 
+    'hoop', 'net', 'steal', 
 ]
 const maxGuesses = 10
 
@@ -56,7 +56,6 @@ function initGame(button, clickedLetter) {
     } else {
         // update wrongGuesses when something is guessed incorrectly, dimenish img opacity .1 per wrong guess
         wrongGuesses++
-        console.log(parseFloat(basketballManImageEl.style.opacity))
         basketballManImageEl.style.opacity = parseFloat(basketballManImageEl.style.opacity) - .1
     }
     button.disabled = true
@@ -82,7 +81,7 @@ function renderKeyboard() {
 
 function renderRandomWord() {
     randomWordEl = wordChoices[Math.floor(Math.random() * wordChoices.length)]
-    console.log(randomWordEl)
+    // console.log(randomWordEl)
     resetGame()
 }
 
@@ -94,4 +93,5 @@ function resetGame() {
     keyboardEl.querySelectorAll('button').forEach((btn) => btn.disabled = false)
     wordDisplayEl.innerHTML = randomWordEl.split('').map(() => '<li class="letter"></li>').join('')
     gameMenu.classList.remove('show')
+    basketballManImageEl.style.opacity = 1
 }
