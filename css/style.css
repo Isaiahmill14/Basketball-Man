@@ -32,7 +32,7 @@ body {
 
 .basketballman-box > img {
     height: 25vmin;
-    margin-left: 7vmin;
+    margin-left: 8vmin;
     padding-bottom: 7vmin; 
     max-width: 270px;
 }
@@ -65,7 +65,6 @@ body {
 }
 
 .word-display > .letter.guessed {
-    /* if i want to add/remove the line under the guessed letter uncomment line below */
     border-color: transparent; 
     margin: -40px 0 20px;
 }
@@ -137,7 +136,7 @@ body {
 .game-menu > .menu {
     background-color: white;
     max-width: 420px;
-    width: 26%;
+    width: 20%;
     text-align: center;
     border-radius: 10px;
     padding: 25px;
@@ -175,6 +174,7 @@ body {
 .play-again:hover {
     background-color: bisque;
 }
+
 /* working on media query */
 
 /* @media (max-width: 782px) {
