@@ -1,7 +1,8 @@
 # Basketball Man
 
-A word game, where the goal is to correctly guess the basketball themed word before reaching the max amount of guesses.
+A word game, where the goal is to correctly guess the basketball themed word before reaching the max amount of guesses. 
 
+Each guessed letter will no longer be selectable, if gussed correcyly, the letter will display in the hidden word box. If incorrectly gueesed, it will add to your incorrect guess counter and gradually make the basketball disappear.
 
 
 # Screenshot
