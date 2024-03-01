@@ -1,7 +1,6 @@
 # Basketball Man
 
-Guess the basketball themed word before the ball disappears! 
-<!-- A description of your game. Background info of the game is a nice touch. -->
+A word game, where the goal is to correctly guess the basketball themed word before reaching the max amount of guesses.
 
 # Screenshot
 
@@ -21,5 +20,5 @@ Guess the basketball themed word before the ball disappears!
 
 # Next Steps
 
-- Add a reset button, allowing the player to restart the game whenever
 - Add more styling to media query to make it more responsive 
+- Score tracker to display how many have been correctly gussed in a row

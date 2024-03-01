@@ -182,9 +182,10 @@ body {
 @media (max-width: 782px) {
     .container {
         flex-direction: column;
-        padding: 30px 15px;
+        /* padding-top: 30px; */
+        padding-bottom: 15px;
         align-items: center;
-        height: 75vmin;
+        height: 95vmin;
     }
     .basketballman-box > img {
         max-width: 200px;
@@ -200,4 +201,5 @@ body {
         margin-bottom: 15px;
         font-size: 1.7rem;
     }
+    
 }
