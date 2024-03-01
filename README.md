@@ -2,6 +2,8 @@
 
 A word game, where the goal is to correctly guess the basketball themed word before reaching the max amount of guesses.
 
+
+
 # Screenshot
 
 <img src="/Game Screenshot.png">

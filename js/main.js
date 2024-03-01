@@ -32,16 +32,6 @@ function init() {
     
 }
 
-function gameOver(isVictory) {
-    setTimeout(() => {
-        //adjust post-game menu to reflect current game info
-        const gameMenuText = isVictory ? `You guessed the word: ` : `The correct word was: `
-        gameMenu.querySelector('h4').innerText = `${isVictory ? 'You Win!' : 'Game Over'}`
-        gameMenu.querySelector('p').innerHTML = `${gameMenuText} <b>${randomWordEl}</b>`
-        gameMenu.classList.add('show')
-    }, 150)
-}
-
 function initGame(button, clickedLetter) {
     //is the clickedLetter within the randomly selected word
     if(randomWordEl.includes(clickedLetter)) {
@@ -81,7 +71,6 @@ function renderKeyboard() {
 
 function renderRandomWord() {
     randomWordEl = wordChoices[Math.floor(Math.random() * wordChoices.length)]
-    // console.log(randomWordEl)
     resetGame()
 }
 
@@ -94,4 +83,14 @@ function resetGame() {
     wordDisplayEl.innerHTML = randomWordEl.split('').map(() => '<li class="letter"></li>').join('')
     gameMenu.classList.remove('show')
     basketballManImageEl.style.opacity = 1
+}
+
+function gameOver(isVictory) {
+        setTimeout(() => {
+            //adjust post-game menu to reflect current game info
+            const gameMenuText = isVictory ? `You guessed the word: ` : `The correct word was: `
+            gameMenu.querySelector('h4').innerText = `${isVictory ? 'You Win!' : 'Game Over'}`
+            gameMenu.querySelector('p').innerHTML = `${gameMenuText} <b>${randomWordEl}</b>`
+            gameMenu.classList.add('show')
+        }, 150)
 }
